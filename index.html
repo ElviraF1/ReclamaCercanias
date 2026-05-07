@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReclamaCercanías | Reclamaciones rápidas para usuarios de Cercanías Madrid</title>
+  <meta name="description" content="ReclamaCercanías ayuda a usuarios de Cercanías Madrid a registrar incidencias, generar reclamaciones y obtener justificantes reutilizables de forma rápida y sencilla." />
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#9c8788',
+              red: '#7b6667',
+              soft: '#f5f1f1',
+              ink: '#4d3f40'
+            }
+          },
+          boxShadow: {
+            glow: '0 24px 80px rgba(156, 135, 136, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .hero-overlay {
+      background: linear-gradient(115deg, rgba(77,63,64,0.92) 0%, rgba(123,102,103,0.82) 44%, rgba(156,135,136,0.48) 100%);
+    }
+    .glass {
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-slate-900">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#4d3f40]/85 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#inicio" class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-red text-lg font-black text-white shadow-glow">RC</div>
+        <div>
+          <p class="text-base font-extrabold tracking-tight text-white">ReclamaCercanías</p>
+          <p class="hidden text-xs text-[#f3ecec] sm:block">Tu incidencia, documentada en minutos</p>
+        </div>
+      </a>
+
+      <nav class="hidden items-center gap-8 text-sm font-medium text-slate-200 md:flex">
+        <a href="#problema" class="transition hover:text-white">El problema</a>
+        <a href="#solucion" class="transition hover:text-white">Solución</a>
+        <a href="#como-funciona" class="transition hover:text-white">Cómo funciona</a>
+        <a href="#contacto" class="rounded-full bg-white px-5 py-2.5 font-bold text-slate-950 transition hover:bg-[#f5f1f1]">Quiero probarlo</a>
+      </nav>
+
+      <a href="#contacto" class="rounded-full bg-brand-red px-4 py-2 text-sm font-bold text-white shadow-glow transition hover:scale-105 md:hidden">Probar</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="relative min-h-screen overflow-hidden pt-24">
+    <div class="absolute inset-0">
+      <img src="Cercanias_Madrid_05.jpg" alt="Colapso en estación de Cercanías Madrid" class="h-full w-full object-cover" onerror="this.src='Cercanias_Madrid_01.png'" />
+      <div class="hero-overlay absolute inset-0"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto grid min-h-[calc(100vh-96px)] max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md">
+          <span class="h-2 w-2 rounded-full bg-brand-red"></span>
+          Para usuarios de Cercanías Madrid cansados de perder tiempo
+        </div>
+
+        <h1 class="text-5xl font-black leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
+          Reclamar una incidencia no debería ser otra odisea.
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
+          Registra retrasos, averías, cancelaciones o falta de información en pocos pasos. ReclamaCercanías genera una reclamación formal y un justificante reutilizable para tu trabajo, universidad o uso personal.
+        </p>
+
+        <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+          <a href="#contacto" class="inline-flex items-center justify-center rounded-full bg-brand-red px-8 py-4 text-base font-extrabold text-white shadow-glow transition hover:-translate-y-1 hover:bg-rose-500">
+            Quiero probar el prototipo
+          </a>
+          <a href="#como-funciona" class="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-8 py-4 text-base font-bold text-white backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/20">
+            Ver cómo funciona
+          </a>
+        </div>
+
+        <div class="mt-10 grid max-w-xl grid-cols-3 gap-4 text-white">
+          <div class="rounded-3xl border border-white/10 bg-white/10 p-4 backdrop-blur-md">
+            <p class="text-2xl font-black">2 min</p>
+            <p class="mt-1 text-xs text-[#f3ecec]">para registrar una incidencia</p>
+          </div>
+          <div class="rounded-3xl border border-white/10 bg-white/10 p-4 backdrop-blur-md">
+            <p class="text-2xl font-black">IA</p>
+            <p class="mt-1 text-xs text-[#f3ecec]">para redactar la reclamación</p>
+          </div>
+          <div class="rounded-3xl border border-white/10 bg-white/10 p-4 backdrop-blur-md">
+            <p class="text-2xl font-black">PDF</p>
+            <p class="mt-1 text-xs text-[#f3ecec]">justificante listo para compartir</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden lg:block">
+        <div class="glass relative mx-auto max-w-md rounded-[2rem] border border-white/40 p-6 shadow-2xl">
+          <div class="rounded-[1.5rem] bg-white p-5 shadow-xl">
+            <div class="mb-5 flex items-center justify-between">
+              <div>
+                <p class="text-sm font-bold text-slate-400">Incidencia detectada</p>
+                <p class="text-xl font-black text-slate-950">C4 · Parla → Nuevos Ministerios</p>
+              </div>
+              <span class="rounded-full bg-[#efe5e5] px-3 py-1 text-xs font-extrabold text-brand-red">+38 min</span>
+            </div>
+            <div class="space-y-3">
+              <div class="rounded-2xl bg-white p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Tipo</p>
+                <p class="mt-1 font-bold text-slate-900">Retraso y falta de información</p>
+              </div>
+              <div class="rounded-2xl bg-white p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Consecuencia</p>
+                <p class="mt-1 font-bold text-slate-900">Llegada tarde al trabajo</p>
+              </div>
+              <div class="rounded-2xl bg-[#efe5e5] p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-[#b08f90]">Resultado</p>
+                <p class="mt-1 font-black text-brand-red">Reclamación + justificante generados</p>
+              </div>
+            </div>
+            <button class="mt-5 w-full rounded-2xl bg-gradient-to-br from-[#4d3f40] via-[#7b6667] to-[#9c8788] px-5 py-4 font-extrabold text-white">Descargar justificante</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section id="problema" class="bg-white px-5 py-24 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-extrabold uppercase tracking-[0.22em] text-brand-red">El problema</p>
+        <h2 class="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Cuando el tren falla, el usuario carga con las consecuencias.</h2>
+        <p class="mt-6 text-lg leading-8 text-slate-700">
+          Retrasos, cambios de vía, trenes detenidos, cancelaciones y falta de información generan pérdidas de tiempo, estrés y explicaciones constantes ante empresas, universidades o compromisos personales.
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-6 md:grid-cols-3">
+        <article class="rounded-[2rem] bg-white p-8 shadow-sm">
+          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-2xl">⏱️</div>
+          <h3 class="text-xl font-black text-slate-950">Tiempo perdido</h3>
+          <p class="mt-4 leading-7 text-slate-700">El usuario no solo llega tarde: pierde margen de organización y necesita justificar una situación que no controla.</p>
+        </article>
+        <article class="rounded-[2rem] bg-white p-8 shadow-sm">
+          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-2xl">📢</div>
+          <h3 class="text-xl font-black text-slate-950">Información confusa</h3>
+          <p class="mt-4 leading-7 text-slate-700">La falta de información clara aumenta la incertidumbre y dificulta documentar qué ha ocurrido realmente.</p>
+        </article>
+        <article class="rounded-[2rem] bg-white p-8 shadow-sm">
+          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-2xl">🧾</div>
+          <h3 class="text-xl font-black text-slate-950">Reclamar cuesta demasiado</h3>
+          <p class="mt-4 leading-7 text-slate-700">Los canales oficiales se perciben como lentos y burocráticos, justo cuando el usuario ya está agotado por la incidencia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section id="solucion" class="overflow-hidden bg-gradient-to-br from-[#4d3f40] via-[#7b6667] to-[#9c8788] px-5 py-24 text-white lg:px-8">
+    <div class="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+      <div>
+        <p class="text-sm font-extrabold uppercase tracking-[0.22em] text-[#b08f90]">La solución</p>
+        <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Una herramienta para transformar la queja en acción.</h2>
+        <p class="mt-6 text-lg leading-8 text-[#f3ecec]">
+          ReclamaCercanías permite registrar una incidencia en segundos, generar una reclamación formal con IA y crear un justificante reutilizable para compartirlo cuando haga falta.
+        </p>
+
+        <div class="mt-10 space-y-5">
+          <div class="flex gap-4 rounded-3xl border border-white/20 bg-white/10 p-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-brand-red font-black">1</span>
+            <div>
+              <h3 class="font-black">Registro rápido</h3>
+              <p class="mt-1 text-[#f3ecec]">Línea, estación, tipo de incidencia, tiempo perdido y consecuencia principal.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 rounded-3xl border border-white/20 bg-white/10 p-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-brand-red font-black">2</span>
+            <div>
+              <h3 class="font-black">Reclamación automática</h3>
+              <p class="mt-1 text-[#f3ecec]">Texto formal, claro y listo para copiar, enviar o descargar.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 rounded-3xl border border-white/20 bg-white/10 p-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-brand-red font-black">3</span>
+            <div>
+              <h3 class="font-black">Justificante reutilizable</h3>
+              <p class="mt-1 text-[#f3ecec]">Documento breve para empresa, universidad, citas médicas o uso personal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <img src="Cercanias_Madrid_04.jpg" alt="Avería nocturna en Cercanías Madrid" class="h-72 w-full rounded-[2rem] object-cover shadow-2xl" onerror="this.src='Cercanias_Madrid_02.png'" />
+        <img src="Cercanias_Madrid_06.jpg" alt="Tren moderno de Cercanías Madrid" class="mt-10 h-72 w-full rounded-[2rem] object-cover shadow-2xl sm:mt-20" onerror="this.src='Cercanias_Madrid_03.png'" />
+        <img src="Cercanias_Madrid_12.jpg" alt="Usuarios esperando en andén saturado" class="h-72 w-full rounded-[2rem] object-cover shadow-2xl" onerror="this.src='Cercanias_Madrid_04.png'" />
+        <img src="Cercanias_Madrid_08.jpg" alt="Tren de Cercanías en trayecto periférico" class="mt-10 h-72 w-full rounded-[2rem] object-cover shadow-2xl sm:mt-20" onerror="this.src='Cercanias_Madrid_05.png'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Personas -->
+  <section class="bg-white px-5 py-24 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="max-w-3xl">
+        <p class="text-sm font-extrabold uppercase tracking-[0.22em] text-brand-red">Usuarios impactados</p>
+        <h2 class="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Pensado para quienes dependen del tren cada día.</h2>
+      </div>
+
+      <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <img src="Cercanias_Madrid_01.jpg" alt="Trabajadores esperando tren en hora punta" class="mb-5 h-44 w-full rounded-3xl object-cover" onerror="this.src='Cercanias_Madrid_06.png'" />
+          <h3 class="text-lg font-black">Trabajadores diarios</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-700">Necesitan justificar llegadas tarde sin perder más tiempo redactando explicaciones.</p>
+        </article>
+        <article class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <img src="Cercanias_Madrid_02.jpg" alt="Usuarios en estación saturada" class="mb-5 h-44 w-full rounded-3xl object-cover" onerror="this.src='Cercanias_Madrid_07.png'" />
+          <h3 class="text-lg font-black">Estudiantes</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-700">Llegar tarde a una clase, práctica o examen puede tener consecuencias reales.</p>
+        </article>
+        <article class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <img src="Cercanias_Madrid_11.jpg" alt="Entrada colapsada en Chamartín" class="mb-5 h-44 w-full rounded-3xl object-cover" onerror="this.src='Cercanias_Madrid_08.png'" />
+          <h3 class="text-lg font-black">Usuarios periféricos</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-700">Sufren trayectos largos, retrasos acumulados y una fuerte sensación de abandono.</p>
+        </article>
+        <article class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <img src="Cercanias_Madrid_03.jpg" alt="Usuarios agotados en andén saturado" class="mb-5 h-44 w-full rounded-3xl object-cover" onerror="this.src='Cercanias_Madrid_09.png'" />
+          <h3 class="text-lg font-black">Usuarios agotados</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-700">Buscan una forma sencilla de reclamar sin añadir más carga mental al problema.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="como-funciona" class="bg-[#f5f1f1] px-5 py-24 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-extrabold uppercase tracking-[0.22em] text-brand-red">Cómo funciona</p>
+        <h2 class="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Del caos al documento en cinco pasos.</h2>
+      </div>
+
+      <div class="mt-16 grid gap-6 lg:grid-cols-5">
+        <div class="rounded-[2rem] bg-white p-7 shadow-sm">
+          <p class="text-4xl font-black text-brand-red">01</p>
+          <h3 class="mt-5 font-black">Entras desde el móvil</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-700">Accedes al formulario de incidencia desde cualquier dispositivo.</p>
+        </div>
+        <div class="rounded-[2rem] bg-white p-7 shadow-sm">
+          <p class="text-4xl font-black text-brand-red">02</p>
+          <h3 class="mt-5 font-black">Indicas qué pasó</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-700">Seleccionas línea, origen, destino, tipo de incidencia y tiempo perdido.</p>
+        </div>
+        <div class="rounded-[2rem] bg-white p-7 shadow-sm">
+          <p class="text-4xl font-black text-brand-red">03</p>
+          <h3 class="mt-5 font-black">Añades evidencia</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-700">Subes captura, foto del panel, billete o mensaje si lo tienes.</p>
+        </div>
+        <div class="rounded-[2rem] bg-white p-7 shadow-sm">
+          <p class="text-4xl font-black text-brand-red">04</p>
+          <h3 class="mt-5 font-black">La IA redacta</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-700">Genera una reclamación formal y un justificante claro.</p>
+        </div>
+        <div class="rounded-[2rem] bg-white p-7 shadow-sm">
+          <p class="text-4xl font-black text-brand-red">05</p>
+          <h3 class="mt-5 font-black">Descargas o compartes</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-700">Copias, envías o descargas el documento final.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-[#4d3f40] via-[#7b6667] to-[#9c8788] px-5 py-24 text-white lg:px-8">
+    <div class="absolute inset-0 opacity-30">
+      <img src="Cercanias_Madrid_09.jpg" alt="Colapso masivo en estación de Cercanías" class="h-full w-full object-cover" onerror="this.src='Cercanias_Madrid_10.png'" />
+    </div>
+    <div class="absolute inset-0 bg-[#4d3f40]/85"></div>
+    <div class="relative mx-auto max-w-4xl text-center">
+      <h2 class="text-4xl font-black tracking-tight sm:text-5xl">Tu tiempo perdido también merece quedar registrado.</h2>
+      <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#f3ecec]">
+        Estamos validando el prototipo de ReclamaCercanías con usuarios reales. Déjanos tus datos y ayúdanos a crear una herramienta útil, sencilla y centrada en quienes viven las incidencias cada día.
+      </p>
+      <a href="#contacto" class="mt-9 inline-flex rounded-full bg-brand-red px-8 py-4 font-extrabold text-white shadow-glow transition hover:-translate-y-1 hover:bg-rose-500">Participar en la validación</a>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contacto" class="bg-white px-5 py-24 lg:px-8">
+    <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="text-sm font-extrabold uppercase tracking-[0.22em] text-brand-red">Contacto</p>
+        <h2 class="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">¿Quieres probar ReclamaCercanías?</h2>
+        <p class="mt-6 text-lg leading-8 text-slate-700">
+          Completa el formulario y te contactaremos para participar en la validación del prototipo. También puedes escribir directamente a <a href="mailto:elvirapro2020@gmail.com" class="font-bold text-brand-red">elvirapro2020@gmail.com</a>.
+        </p>
+
+        <div class="mt-10 overflow-hidden rounded-[2rem]">
+          <img src="Cercanias_Madrid_07.jpg" alt="Tren de Cercanías Madrid en circulación" class="h-80 w-full object-cover" onerror="this.src='Cercanias_Madrid_11.png'" />
+        </div>
+      </div>
+
+      <form action="https://formsubmit.co/elvirapro2020@gmail.com" method="POST" enctype="multipart/form-data" class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject" value="Nuevo contacto desde ReclamaCercanías" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="nombre" class="mb-2 block text-sm font-bold text-slate-700">Nombre</label>
+            <input id="nombre" name="nombre" type="text" required placeholder="Tu nombre" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-brand-red focus:ring-4 focus:ring-[#d9c7c7]" />
+          </div>
+
+          <div>
+            <label for="email" class="mb-2 block text-sm font-bold text-slate-700">Email</label>
+            <input id="email" name="email" type="email" required placeholder="tu@email.com" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-brand-red focus:ring-4 focus:ring-[#d9c7c7]" />
+          </div>
+        </div>
+
+        <div class="mt-5 grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="telefono" class="mb-2 block text-sm font-bold text-slate-700">Teléfono opcional</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="600 000 000" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-brand-red focus:ring-4 focus:ring-[#d9c7c7]" />
+          </div>
+
+          <div>
+            <label for="linea" class="mb-2 block text-sm font-bold text-slate-700">Línea habitual</label>
+            <select id="linea" name="linea_habitual" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-brand-red focus:ring-4 focus:ring-[#d9c7c7]">
+              <option value="">Selecciona una línea</option>
+              <option>C1</option>
+              <option>C2</option>
+              <option>C3</option>
+              <option>C4</option>
+              <option>C5</option>
+              <option>C7</option>
+              <option>C8</option>
+              <option>C9</option>
+              <option>C10</option>
+              <option>Uso varias líneas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-5 grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="origen" class="mb-2 block text-sm font-bold text-slate-700">Estación o municipio de origen</label>
+            <input id="origen" name="origen" type="text" placeholder="Ej. Parla, Alcalá, Chamartín..." class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-brand-red focus:ring-4 focus:ring-[#d9c7c7]" />
+          </div>
+
+          <div>
+            <label for="perfil" class="mb-2 block text-sm font-bold text-slate-700">Perfil de usuario</label>
+            <select id="perfil" name="perfil_usuario" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-brand-red focus:ring-4 focus:ring-[#d9c7c7]">
+              <option value="">Selecciona una opción</option>
+              <option>Trabajador/a diario/a</option>
+              <option>Estudiante</option>
+              <option>Usuario/a periférico/a</option>
+              <option>Usuario/a en hora punta</option>
+              <option>Otro perfil</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <label for="problema" class="mb-2 block text-sm font-bold text-slate-700">¿Qué problema te gustaría resolver primero?</label>
+          <textarea id="problema" name="problema_principal" rows="5" required placeholder="Cuéntanos brevemente tu experiencia con Cercanías Madrid..." class="w-full resize-none rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-brand-red focus:ring-4 focus:ring-[#d9c7c7]"></textarea>
+        </div>
+
+        <div class="mt-5">
+          <label for="archivo" class="mb-2 block text-sm font-bold text-slate-700">Adjuntar evidencia opcional</label>
+          <input id="archivo" name="archivo" type="file" class="w-full rounded-2xl border border-dashed border-slate-300 bg-white px-4 py-3 text-sm text-slate-700 file:mr-4 file:rounded-full file:border-0 file:bg-gradient-to-br from-[#4d3f40] via-[#7b6667] to-[#9c8788] file:px-4 file:py-2 file:text-sm file:font-bold file:text-white" />
+          <p class="mt-2 text-xs text-slate-500">Puedes adjuntar una captura, foto del panel, billete o incidencia.</p>
+        </div>
+
+        <label class="mt-6 flex gap-3 text-sm leading-6 text-slate-700">
+          <input type="checkbox" required class="mt-1 h-4 w-4 rounded border-slate-300 text-brand-red focus:ring-brand-red" />
+          <span>Acepto que mis datos se utilicen exclusivamente para contactar conmigo sobre la validación del prototipo ReclamaCercanías.</span>
+        </label>
+
+        <button type="submit" class="mt-8 w-full rounded-full bg-brand-red px-8 py-4 text-base font-extrabold text-white shadow-glow transition hover:-translate-y-1 hover:bg-rose-500">
+          Enviar solicitud
+        </button>
+
+        <p class="mt-4 text-center text-xs text-slate-500">Al enviar el formulario, recibirás un email de confirmación del servicio de formularios la primera vez.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-br from-[#4d3f40] via-[#7b6667] to-[#9c8788] px-5 py-10 text-white lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="text-lg font-black">ReclamaCercanías</p>
+        <p class="mt-1 text-sm text-slate-400">Proyecto de innovación AI T.H.I.N.K. · Fase IMPLEMENT</p>
+      </div>
+      <div class="flex flex-wrap gap-4 text-sm text-slate-400">
+        <a href="#inicio" class="hover:text-white">Inicio</a>
+        <a href="#problema" class="hover:text-white">Problema</a>
+        <a href="#solucion" class="hover:text-white">Solución</a>
+        <a href="#contacto" class="hover:text-white">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
